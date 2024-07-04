@@ -14,7 +14,6 @@ public class Controller : MonoBehaviour
     [Tooltip("The Rigidbody2D component to use in \"Astroids Mode\".")]
     public Rigidbody2D myRigidbody = null;
 
-
     [Header("Movement Variables")]
     [Tooltip("The speed at which the player will move.")]
     public float moveSpeed = 10.0f;
@@ -264,4 +263,16 @@ public class Controller : MonoBehaviour
             }
         }
     }
+
+    // private void PlayRotateAnimation(){
+    //     // Play the rotate animation when space is pushed
+    //     if (Input.GetKeyDown(KeyCode.Space))
+    //     {
+    //         // make the isRotating animator paramether true
+    //         // animator.SetBool("isRotating", true);
+        
+    //         isRotating = true;
+    //         // animator.Play("Rotate");
+    //     }
+    // }
 }

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsWinnable = true;
     [Tooltip("The number of enemies that must be defeated to win the game")]
     public int enemiesToDefeat = 10;
-    
+    public  GameObject bossEnemy;
     // The number of enemies defeated in game
     private int enemiesDefeated = 0;
 
@@ -189,10 +189,13 @@ public class GameManager : MonoBehaviour
     public void IncrementEnemiesDefeated()
     {
         enemiesDefeated++;
-        if (enemiesDefeated >= enemiesToDefeat && gameIsWinnable)
-        {
+        if(gameIsWinnable && score>10000){
             LevelCleared();
         }
+        // if (enemiesDefeated >= enemiesToDefeat && gameIsWinnable)
+        // {
+        //     LevelCleared();
+        // }
     }
 
     /// <summary>
@@ -226,6 +229,7 @@ public class GameManager : MonoBehaviour
             SaveHighScore();
         }
         UpdateUIElements();
+        
     }
     
     /// <summary>

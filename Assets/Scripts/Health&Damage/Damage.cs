@@ -24,7 +24,7 @@ public class Damage : MonoBehaviour
     public bool dealDamageOnTriggerStay = false;
     [Tooltip("Whether or not to apply damage on non-trigger collider collisions")]
     public bool dealDamageOnCollision = false;
-
+    public GameObject EnemySlot;
     /// <summary>
     /// Description: 
     /// Standard Unity function called whenever a Collider2D enters any attached 2D trigger collider
@@ -89,6 +89,7 @@ public class Damage : MonoBehaviour
     private void DealDamage(GameObject collisionGameObject)
     {
         Health collidedHealth = collisionGameObject.GetComponent<Health>();
+   
         if (collidedHealth != null)
         {
             if (collidedHealth.teamId != this.teamId)
@@ -104,9 +105,12 @@ public class Damage : MonoBehaviour
                     {
                         gameObject.GetComponent<Enemy>().DoBeforeDestroy();
                     }
+
                     Destroy(this.gameObject);
                 }
             }
         }
     }
+
+
 }

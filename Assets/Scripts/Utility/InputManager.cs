@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class handles reading the input given by the player through input devices
@@ -10,7 +11,7 @@ public class InputManager : MonoBehaviour
 {
     // A global reference for the input manager that outher scripts can access to read the input
     public static InputManager instance;
-
+    public Button DialogeButton;
     /// <summary>
     /// Description:
     /// Standard Unity Function called when the script is loaded
@@ -30,6 +31,16 @@ public class InputManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+        private void Update()
+    {
+        // Check if spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Programmatically invoke the button's onClick event
+            DialogeButton.onClick.Invoke();
         }
     }
 
